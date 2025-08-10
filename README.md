@@ -18,8 +18,8 @@ A dynamic React form builder application that allows users to create custom form
 
 1. Clone the repository:
 
-git clone https://github.com/yourusernam/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/haseenashahul/FORM_BUILDER.git
+cd FORM_BUILDER
 
 ## Install dependencies:
 
@@ -28,3 +28,19 @@ npm install
 ## Start the development server:
 
 npm run dev
+
+## Technologies Used
+
+React 18+ , Redux Toolkit , React Router DOM , Material-UI (MUI) , TypeScript , Vite
+
+## Project Structure
+
+-src/components - Reusable React components like FieldList
+
+-src/pages - Main pages like CreateForm, PreviewForm, MyForms
+
+-src/redux - Redux slices and store configuration
+
+-src/types - TypeScript types/interfaces
+
+-src/utils - Utility functions for localStorage and validation
