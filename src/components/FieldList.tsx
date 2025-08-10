@@ -205,7 +205,7 @@ const FieldList = ({ fields, onDelete }: Props) => {
                         ? {
                             value: /^(?=.*[0-9])(?=.*[A-Z]).{8,}$/,
                             errorMessage:
-                              "Password must be 8+ chars, contain a number and uppercase letter",
+                              "Password must be at least 8 characters, include uppercase, lowercase, number, and special character",
                           }
                         : undefined
                     )

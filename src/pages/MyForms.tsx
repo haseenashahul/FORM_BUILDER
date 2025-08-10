@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import { 
-  Card, 
-  CardContent, 
-  Typography, 
-  Box, 
-  IconButton, 
-  Container, 
-  Paper, 
+import {
+  Card,
+  CardContent,
+  Typography,
+  Box,
+  IconButton,
+  Container,
+  Paper,
   Stack,
   Chip,
   Divider
@@ -25,10 +25,10 @@ const MyForms = () => {
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Paper elevation={3} sx={{ p: 4, borderRadius: 3 }}>
         <Box sx={{ mb: 4, textAlign: 'center' }}>
-          <Typography 
-            variant="h4" 
+          <Typography
+            variant="h4"
             component="h1"
-            sx={{ 
+            sx={{
               mb: 2,
               color: 'primary.main',
               fontWeight: 600
@@ -36,7 +36,7 @@ const MyForms = () => {
           >
             My Forms
           </Typography>
-          
+
           <Typography variant="body1" color="text.secondary">
             Manage and preview your saved forms. Create new forms or test existing ones.
           </Typography>
@@ -89,7 +89,7 @@ const MyForms = () => {
               <IconButton
                 color="inherit"
                 size="large"
-                sx={{ 
+                sx={{
                   pointerEvents: "none",
                   backgroundColor: "rgba(0,0,0,0.04)",
                   "&:hover": {
@@ -110,10 +110,10 @@ const MyForms = () => {
 
           {/* Existing saved forms */}
           {forms.length === 0 ? (
-            <Box 
-              sx={{ 
-                width: "100%", 
-                textAlign: "center", 
+            <Box
+              sx={{
+                width: "100%",
+                textAlign: "center",
                 py: 8,
                 border: '2px dashed',
                 borderColor: 'grey.300',
@@ -137,7 +137,7 @@ const MyForms = () => {
                   width: 300,
                   cursor: "pointer",
                   transition: "all 0.3s ease",
-                  "&:hover": { 
+                  "&:hover": {
                     boxShadow: 6,
                     transform: "translateY(-2px)",
                   },
@@ -147,9 +147,9 @@ const MyForms = () => {
                 <CardContent sx={{ p: 3 }}>
                   <Stack spacing={2}>
                     <Box>
-                      <Typography 
-                        variant="h6" 
-                        sx={{ 
+                      <Typography
+                        variant="h6"
+                        sx={{
                           fontWeight: 600,
                           color: 'text.primary',
                           mb: 1
@@ -157,8 +157,8 @@ const MyForms = () => {
                       >
                         {form.name}
                       </Typography>
-                      
-                      <Chip 
+
+                      <Chip
                         label={`${form.fields.length} field${form.fields.length !== 1 ? 's' : ''}`}
                         size="small"
                         color="primary"
@@ -170,14 +170,17 @@ const MyForms = () => {
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                       <CalendarTodayIcon sx={{ fontSize: 16, color: 'text.secondary' }} />
                       <Typography variant="body2" color="text.secondary">
-                        Created: {new Date(form.createdAt).toLocaleDateString()}
+                        Created: {(() => {
+                          const d = new Date(form.createdAt);
+                          return `${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}/${d.getFullYear()}`;
+                        })()}
                       </Typography>
                     </Box>
 
-                    <Typography 
-                      variant="body2" 
+                    <Typography
+                      variant="body2"
                       color="text.secondary"
-                      sx={{ 
+                      sx={{
                         fontStyle: 'italic',
                         fontSize: '0.875rem'
                       }}
